@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "entry_package": "sources_by_ting29",
   "download_url": "https://raw.githubusercontent.com/liaozhu913/tingshu-ting29-source/main/sources_by_ting29.jar",
-  "update_msg": "新增 29听书网源：支持搜索、分类、详情、完整章节和播放地址解析。",
+  "update_msg": "扩展听书源：新增恋听网、乐听网、麒麟听书、275听书、有听网、听13网、爱听书；保留29听书网。已现场验证搜索、详情、章节与可用音频链路。",
   "support_url": ""
 }
