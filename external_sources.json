@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "entry_package": "sources_by_ting29",
+  "download_url": "https://raw.githubusercontent.com/liaozhu913/tingshu-ting29-source/main/sources_by_ting29.jar",
+  "update_msg": "新增 29听书网源：支持搜索、分类、详情、完整章节和播放地址解析。",
+  "support_url": ""
+}
