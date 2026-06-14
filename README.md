@@ -52,3 +52,13 @@ https://raw.githubusercontent.com/liaozhu913/tingshu-ting29-source/main/external
 3. 收听数、播放数、人气等统计文本仅进入元信息，不允许写入书名或分类。
 4. 分类优先使用明确标注“分类/类型”的字段，否则回退到当前分类入口名称。
 5. 搜索页和分类页应共用同一套 `parseBookItem` 字段映射，避免两个入口展示含义不一致。
+
+## 全站点发布前核对
+
+发布新版本前请运行静态核对脚本，确认 `sources_by_ting29.jar` 内仍包含所有已注册站点的运行时代码痕迹：
+
+```bash
+python3 tools/audit_jar_strings.py
+```
+
+更详细的站点风险和字段映射规则见 `docs/site-audit.md`。
