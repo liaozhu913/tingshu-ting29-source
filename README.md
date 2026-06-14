@@ -40,3 +40,25 @@ https://raw.githubusercontent.com/liaozhu913/tingshu-ting29-source/main/external
 .\gradlew.bat test --tests ExpandedSourcesLiveTest -x dexTask
 .\gradlew.bat test --tests Ting29Test -x dexTask
 ```
+
+## 听13网解析修复说明
+
+听13网分类列表不能复用通用 PTCMS 列表字段下标。分类页中书名链接、分类文本、收听数等统计信息在同一行内相邻出现，直接读取整行文本或按 `.list-book-cs span` 固定位置映射，会导致书名、分类、收听数错位。
+
+本仓库新增 `Ting13Parsing` 辅助代码，要求听13网源按站点结构独立解析：
+
+1. 书名只从标题链接自身文本读取。
+2. 详情页地址只从标题链接 `href` 读取并规范化为绝对地址。
+3. 收听数、播放数、人气等统计文本仅进入元信息，不允许写入书名或分类。
+4. 分类优先使用明确标注“分类/类型”的字段，否则回退到当前分类入口名称。
+5. 搜索页和分类页应共用同一套 `parseBookItem` 字段映射，避免两个入口展示含义不一致。
+
+## 全站点发布前核对
+
+发布新版本前请运行静态核对脚本，确认 `sources_by_ting29.jar` 内仍包含所有已注册站点的运行时代码痕迹：
+
+```bash
+python3 tools/audit_jar_strings.py
+```
+
+更详细的站点风险和字段映射规则见 `docs/site-audit.md`。

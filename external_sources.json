@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 3,
   "entry_package": "sources_by_ting29",
   "download_url": "https://raw.githubusercontent.com/liaozhu913/tingshu-ting29-source/main/sources_by_ting29.jar",
-  "update_msg": "修复听13网、爱听书完整章节加载不全的问题，优先使用移动目录页抓取全量章节；保留并继续支持 29听书网、恋听网、乐听网、麒麟听书、275听书、有听网。",
+  "update_msg": "全站点解析优化核对：统一书名、分类、收听数/播放数的字段边界，重点修复听13网分类列表错位，并补充发布前 jar 站点完整性检查。",
   "support_url": ""
 }
